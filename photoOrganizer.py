@@ -8,9 +8,11 @@ from PIL import Image
 def photoShootDate(file):
     photo = Image.open(file)
     inf = photo._getexif()
-    if 36867 in info:
-        date = info[36867]
-        date = datetime.strptime(date, "%Y:%m:%d %H:%M:%S")
+    if 36867 in inf:
+        date = inf[36867]
+        date = datetime.strptime(date, '%Y:%m:%d %H:%M:%S')
     else:
         date = datetime.fromtimestamp(os.path.getmtime(file))
     return date
+
+print(photoShootDate('test.png'))
