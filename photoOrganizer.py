@@ -15,4 +15,5 @@ def photoShootDate(file):
         date = datetime.fromtimestamp(os.path.getmtime(file))
     return date
 
-print(photoShootDate('test.png'))
+
+print(photoShootDate('test.jpg'))
