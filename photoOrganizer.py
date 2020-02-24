@@ -8,7 +8,7 @@ import PIL.ExifTags
 
 def photoShootDate(file):
     photo = Image.open(file)
-    inf = photo._getexif()
+    inf = photo.getdata()
     if 36867 in inf:
         date = inf[36867]
         date = datetime.strptime(date, '%Y:%m:%d %H:%M:%S')
