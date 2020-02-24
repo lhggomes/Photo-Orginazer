@@ -4,6 +4,11 @@ from PIL import Image
 import PIL.ExifTags
 import shutil
 
+#Global Variables
+
+extensions = ['jpg', 'jpeg', 'JPG', 'JPEG']
+
+
 #Function Format the Date by the way we need 
 def folderPath (file):
     date = photoShootDate(file)
@@ -28,6 +33,17 @@ def moveFiles(file):
         os.makedirs(newFolder)
     shutil.move(file, newFolder + '/' + file)
 
+#Functio to catch all the photos
 
+def organize(): 
+    global extensions
+    photos =  [
+        filename for filename in os.listdir('.') if any(filename.endswitch(ext) for ext in extensions)
+    ] 
+
+    for filename in photos:
+        moveFiles(filename)
+
+#Test Area
 
 moveFiles('test.jpg')
