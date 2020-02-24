@@ -6,7 +6,7 @@ import PIL.ExifTags
 #Function Format the Date by the way we need 
 def folderPath (file):
     date = photoShootDate(file)
-    return date.strptime('%Y') + '/' + date.strftime('%Y-%m-%d')
+    return date.strftime('%Y') + '/' + date.strftime('%Y-%m-%d')
 
 #Function to Catch the Date of the File 
 def photoShootDate(file):
