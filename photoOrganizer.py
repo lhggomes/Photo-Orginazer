@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 from PIL import Image
 import PIL.ExifTags
+import shutil
 
 #Function Format the Date by the way we need 
 def folderPath (file):
@@ -19,5 +20,14 @@ def photoShootDate(file):
         date = datetime.fromtimestamp(os.path.getmtime(file))
     return date
 
+#Function to move the photo
 
-print(folderPath('test.jpg'))
+def moveFiles(file): 
+    newFolder = folderPath(file)
+    if not os.path.exists(newFolder):
+        os.makedirs(newFolder)
+    shutil.move(file, newFolder + '/' + file)
+
+
+
+moveFiles('test.jpg')
