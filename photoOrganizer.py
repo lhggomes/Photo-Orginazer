@@ -3,9 +3,12 @@ from datetime import datetime
 from PIL import Image
 import PIL.ExifTags
 
-# Crating a Function to Catch the Data of thXe Photos
+#Function Format the Date by the way we need 
+def folderPath (file):
+    date = photoShootDate(file)
+    return date.strptime('%Y') + '/' + date.strftime('%Y-%m-%d')
 
-
+#Function to Catch the Date of the File 
 def photoShootDate(file):
     photo = Image.open(file)
     inf = photo.getdata()
@@ -17,4 +20,4 @@ def photoShootDate(file):
     return date
 
 
-print(photoShootDate('test.jpg'))
+print(folderPath('test.jpg'))
