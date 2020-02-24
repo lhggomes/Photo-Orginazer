@@ -38,7 +38,7 @@ def moveFiles(file):
 def organize(): 
     global extensions
     photos =  [
-        filename for filename in os.listdir('.') if any(filename.endswitch(ext) for ext in extensions)
+        filename for filename in os.listdir('.') if any(filename.endswith(ext) for ext in extensions)
     ] 
 
     for filename in photos:
@@ -46,4 +46,4 @@ def organize():
 
 #Test Area
 
-moveFiles('test.jpg')
+print(organize())
