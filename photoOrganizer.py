@@ -9,41 +9,43 @@ import shutil
 extensions = ['jpg', 'jpeg', 'JPG', 'JPEG']
 
 
-#Function Format the Date by the way we need 
-def folderPath (file):
-    date = photoShootDate(file)
-    return date.strftime('%Y') + '/' + date.strftime('%Y-%m-%d')
+class PhotoOrganize:
 
-#Function to Catch the Date of the File 
-def photoShootDate(file):
-    photo = Image.open(file)
-    inf = photo.getdata()
-    if 36867 in inf:
-        date = inf[36867]
-        date = datetime.strptime(date, '%Y:%m:%d %H:%M:%S')
-    else:
-        date = datetime.fromtimestamp(os.path.getmtime(file))
-    return date
+    #Function Format the Date by the way we need 
+    def folderPath (self, file):
+        date = photoShootDate(file)
+        return date.strftime('%Y') + '/' + date.strftime('%Y-%m-%d')
 
-#Function to move the photo
+    #Function to Catch the Date of the File 
+    def photoShootDate(self,file):
+        photo = Image.open(file)
+        inf = photo.getdata()
+        if 36867 in inf:
+            date = inf[36867]
+            date = datetime.strptime(date, '%Y:%m:%d %H:%M:%S')
+        else:
+            date = datetime.fromtimestamp(os.path.getmtime(file))
+        return date
 
-def moveFiles(file): 
-    newFolder = folderPath(file)
-    if not os.path.exists(newFolder):
-        os.makedirs(newFolder)
-    shutil.move(file, newFolder + '/' + file)
+    #Function to move the photo
 
-#Functio to catch all the photos
+    def moveFiles(self,file): 
+        newFolder = folderPath(file)
+        if not os.path.exists(newFolder):
+            os.makedirs(newFolder)
+        shutil.move(file, newFolder + '/' + file)
 
-def organize(): 
-    global extensions
-    photos =  [
-        filename for filename in os.listdir('.') if any(filename.endswith(ext) for ext in extensions)
-    ] 
+    #Functio to catch all the photos
 
-    for filename in photos:
-        moveFiles(filename)
+    def organize(self): 
+        global extensions
+        photos =  [
+            filename for filename in os.listdir('.') if any(filename.endswith(ext) for ext in extensions)
+        ] 
 
-#Test Area
+        for filename in photos:
+            moveFiles(filename)
 
-print(organize())
+    #Test Area
+
+    print(organize())
