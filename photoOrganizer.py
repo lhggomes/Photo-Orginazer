@@ -1,8 +1,9 @@
 import os
 from datetime import datetime
 from PIL import Image
+import PIL.ExifTags
 
-# Crating a Function to Catch the Data of the Photos
+# Crating a Function to Catch the Data of thXe Photos
 
 
 def photoShootDate(file):
