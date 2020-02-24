@@ -43,7 +43,7 @@ class PhotoOrganize:
         ]
 
         for filename in photos:
-            moveFiles(filename)
+            self.moveFiles(filename)
 
 
 #Calling the Methods OOP
