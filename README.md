@@ -1,6 +1,25 @@
 Photo Organizer 
 ========================================
 
+About this Repository
+-----------------
+
+This a software to organize photos using their shoot date or record date automatically. 
+Let's se how it works: 
+
+1) The first folder uses the year, to group the photos, like: 
+
+<img src="/docs/first_group.png" alt="Example"/>
+
+2) The second is the complete date: 
+
+<img src="/docs/second_group.png" alt="Example"/>
+
+
+You can use the .reg file to add the windows popup, like the example: 
+
+<img src="/docs/windows.png" alt="Example"/>
+
 Table of Contents
 -----------------
 
@@ -22,7 +41,7 @@ Getting Started
 
 These instructions will get you a copy of the project up and running on
 your local machine.
-This a software to organize photos using their shoot date or record date automatically. 
+
 
 Installing
 ----------
