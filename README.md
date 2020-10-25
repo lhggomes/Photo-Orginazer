@@ -58,7 +58,7 @@ repository:
 
 You'll need a Git client. The command line program is fine, but if you
 prefer graphical interface, you can install e.g. git-gui on Linux.
-
+~~~~~~~~~~~
 
 
 Built With
@@ -77,6 +77,7 @@ Authors
 -------
 
 -  **Lucas Henrique Silva Gomes** -
+
 License
 -------
 
